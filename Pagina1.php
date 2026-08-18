@@ -14,7 +14,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     body {
-      padding-top: 20px;
+      padding-top: 76px; /* espacio para que el contenido no quede debajo del navbar fijo */
       background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #8fd3f4);
       font-family: 'Trebuchet MS', sans-serif;
     }
@@ -167,14 +167,14 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="Pagina1.php">Logo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav me-auto">
           <li class="nav-item">
             <a class="nav-link" href="Pagina2.php">Página 2</a>
           </li>
@@ -192,6 +192,13 @@
             </ul>
           </li>
         </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <button type="button" class="login-btn-open btn btn-primary" onclick="document.getElementById('loginModal').style.display='block'">
+              Login
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -201,14 +208,6 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-xs-12 text-center">
-        <button type="button" class="login-btn-open btn btn-lg btn-primary" onclick="document.getElementById('loginModal').style.display='block'">
-          Login
-        </button>
-      </div>
-    </div>
-
-    <div class="row" style="margin-top: 25px;">
       <aside class="col-xs-12 col-sm-4 col-lg-3">
         Contenido secundario
         <img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyYzcyZ2VsanU1YjFnN3lubjMwdDcxc2Z1eDllcnkwMDhwZndqMHpzZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/o7mLSkGYCu9Pi/200w.gif" alt="Imagen decorativa" class="img-responsive" style="margin-top: 15px; border-radius: 8px;">
