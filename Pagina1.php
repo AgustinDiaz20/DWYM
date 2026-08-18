@@ -6,11 +6,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title><?php echo $tituloPagina; ?></title>
-  <!-- Bootstrap 3 CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     body {
       padding-top: 20px;
@@ -48,18 +49,6 @@
     }
     main {
       background: linear-gradient(160deg, #43cea2, #185a9d);
-    }
-
-    .carousel-wrapper {
-      margin-top: 25px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    .carousel-wrapper .item img {
-      width: 100%;
-      max-height: 350px;
-      object-fit: cover;
     }
 
     footer.site-footer {
@@ -178,6 +167,35 @@
 </head>
 <body>
 
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="Pagina1.php">Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="Pagina2.php">Página 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Pagina3.php">Página 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Pagina4.php">Página 4</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Más páginas</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Pagina4.php">Página 4</a></li>
+              <li><a class="dropdown-item" href="Pagina5.php">Página 5</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <h1 class="titulo"><?php echo $tituloPagina; ?></h1>
 
   <div class="container">
@@ -187,45 +205,6 @@
         <button type="button" class="login-btn-open btn btn-lg btn-primary" onclick="document.getElementById('loginModal').style.display='block'">
           Login
         </button>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12">
-        <div id="miCarousel" class="carousel slide carousel-wrapper" data-ride="carousel">
-          <!-- Indicadores -->
-          <ol class="carousel-indicators">
-            <li data-target="#miCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#miCarousel" data-slide-to="1"></li>
-            <li data-target="#miCarousel" data-slide-to="2"></li>
-          </ol>
-
-          <!-- Slides -->
-          <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <img src="https://images.teepublic.com/derived/production/designs/4037749_0/1547913797/i_m:pid_487,c_77_76_887x1108,bc_ffffff,ar_4x5,o_portrait,pm_4,s_630,q_90.jpg" alt="Slide 1">
-              <div class="carousel-caption">Slide 1</div>
-            </div>
-            <div class="item">
-              <img src="https://media.tenor.com/lxSjtlze2CsAAAAM/skeleton-mad-skeleton.gif" alt="Slide 2">
-              <div class="carousel-caption">Slide 2</div>
-            </div>
-            <div class="item">
-              <img src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyZTMwNzI4cmFpdjMyMjltaTJjbTI1ODRoanFqaDhuYWNhb2kyZzRmMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/gsKe9hyAuoZH2/giphy.gif" alt="Slide 3">
-              <div class="carousel-caption">Slide 3</div>
-            </div>
-          </div>
-
-          <!-- Controles -->
-          <a class="left carousel-control" href="#miCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Anterior</span>
-          </a>
-          <a class="right carousel-control" href="#miCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente</span>
-          </a>
-        </div>
       </div>
     </div>
 
@@ -241,31 +220,14 @@
       </main>
     </div>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="row">
-        <div class="col-xs-12">
-          <nav class="navbar navbar-expand-sm bg-light">
-            <div class="container-fluid">
-              <!-- Links -->
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link 1</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link 2</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link 3</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <p style="margin-top: 10px; font-weight: normal;">&copy; <?php echo $anioActual; ?> - Todos los derechos reservados</p>
-        </div>
-      </div>
-    </footer>
+  </div>
 
+  <div class="container-fluid bg-dark">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4" style="color:white">&copy; <?php echo $anioActual; ?> - Todos los derechos reservados</div>
+      <div class="col-4"></div>
+    </div>
   </div>
 
   <!-- Modal de Login -->
