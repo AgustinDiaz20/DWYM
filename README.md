@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌐 Sitio Web Multi-página en PHP + Bootstrap 5.3.8
+#  Sitio Web Multi-página en PHP + Bootstrap 5.3.8
 
 **Creado por Agustín Díaz — Grupo XP10**
 
