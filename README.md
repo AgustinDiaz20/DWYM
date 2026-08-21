@@ -5,7 +5,7 @@
 **Creado por Agustín Díaz — Grupo XP10**
 
 </div>
-*Repositorio migrado de [github.com/AgustinDiaz20/Dise-o1](https://github.com/AgustinDiaz20/Dise-o1)*
+*Repositorio migrado de [github.com/AgustinDiaz20/Dise-o1]: https://github.com/AgustinDiaz20/Dise-o1
 
 
 ---
