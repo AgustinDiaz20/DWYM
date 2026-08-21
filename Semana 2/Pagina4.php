@@ -1,6 +1,6 @@
 <?php
   // Variables PHP usadas en la página
-  $tituloPagina = "Productos";
+  $tituloPagina = "carrusel";
   $anioActual = date("Y");
 ?>
 <!DOCTYPE html>
@@ -97,8 +97,8 @@
 
   <div class="container">
     <main>
-      <h1>Bienvenido a mi página</h1>
-      <p>Este es un párrafo de ejemplo.</p>
+      <h1>Miniaturas</h1>
+      <p>Las miniaturas que se ven en el carrusel de abajo son pintadas por mi persona, aqui solo se ven unas pocas y cada una tiene una tecnica disitnta de pintado.</p>
     </main>
 
     <!-- Carousel -->
@@ -114,13 +114,13 @@
       <!-- The slideshow/carousel -->
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="la.jpg" alt="Los Angeles" class="d-block w-100">
+          <img src="img/IMG1.png" alt="icon Barear" class="d-block w-100">
         </div>
         <div class="carousel-item">
-          <img src="chicago.jpg" alt="Chicago" class="d-block w-100">
+          <img src="img/IMG2.jpg" alt="The Plague marine Gang" class="d-block w-100">
         </div>
         <div class="carousel-item">
-          <img src="ny.jpg" alt="New York" class="d-block w-100">
+          <img src="img/IMG3.jpg" alt="Blood Herald" class="d-block w-100">
         </div>
       </div>
 

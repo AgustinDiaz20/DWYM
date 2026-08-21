@@ -221,13 +221,9 @@
 
   </div>
 
-  <div class="container-fluid bg-dark">
-    <div class="row">
-      <div class="col-4"></div>
-      <div class="col-4" style="color:white">&copy; <?php echo $anioActual; ?> - Todos los derechos reservados</div>
-      <div class="col-4"></div>
-    </div>
-  </div>
+  <footer class="site-footer container-fluid">
+    &copy; <?php echo $anioActual; ?> - Todos los derechos reservados
+  </footer>
 
   <!-- Modal de Login -->
   <div id="loginModal" class="login-modal">
