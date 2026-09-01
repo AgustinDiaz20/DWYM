@@ -27,6 +27,27 @@ Páginas 2 a 5
 
 ---
 
+---
 
+ Cambios — Semana 3
+
+- **En construcción:** En esta semana se estuvo trabajando en la reestructuración interna del proyecto, organización del código base y preparación de la arquitectura para el catálogo de productos.
+
+---
+
+ Cambios — Semana 4 (Actual)
+
+Definición de Temática
+- **E-Commerce de Juguetes Didácticos:** Se definió formalmente el enfoque del sitio web, orientado a la venta en línea de productos educativos y juegos didácticos.
+
+Mockup y Diseño UI/UX
+- **Subida del Mockup inicial:** Se integró la propuesta gráfica e interfaz de usuario estructurada a mano, definiendo la distribución principal de la tienda:
+  - **Header & Navegación:** Menú principal con categorías clave (*Inicio, Categorías, Edades, Novedades, Ofertas*), barra de búsqueda, acceso a perfil y carrito de compras.
+  - **Juguete Destacado:** Sección promocional diaria con precio, sistema de calificaciones por estrellas, control de cantidad y acceso rápido al carrito.
+  - **Packs Destacados:** Módulo interactivo con carrusel de imágenes para visualizar la variedad de productos incluidos en cada paquete.
+  - **Catálogo & Filtros:** Zona de filtrado y orden de búsqueda, junto con tarjetas de producto que incluyen previsualización dinámica al pasar el cursor (*hover effect*).
+
+Paleta de Colores e Identidad Visual
+- **Esquema de Colores:** Se definió una paleta basada en **degradados en tonalidades celestes y colores claros**, buscando transmitir una estética infantil, limpia, accesible y didáctica.
 
 
