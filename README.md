@@ -27,11 +27,9 @@ Páginas 2 a 5
 
 ---
 
----
-
  Cambios — Semana 3
 
-- **En construcción:** En esta semana se estuvo trabajando en la reestructuración interna del proyecto, organización del código base y preparación de la arquitectura para el catálogo de productos.
+- **En construcción:** En esta semana se estuvo trabajando en la reestructuración interna del proyecto.
 
 ---
 
