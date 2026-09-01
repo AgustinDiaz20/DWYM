@@ -47,5 +47,6 @@ Mockup y Diseño UI/UX
 
 Paleta de Colores e Identidad Visual
 - **Esquema de Colores:** Se definió una paleta basada en **degradados en tonalidades celestes y colores claros**, buscando transmitir una estética infantil, limpia, accesible y didáctica.
+- Todo esto como obejtivos para el Frontend (La imagen de Mockup es netamente referancial)
 
 
