@@ -33,7 +33,7 @@ Páginas 2 a 5
 
 ---
 
- Cambios — Semana 4 (Actual)
+ Cambios — Semana 4 
 
 Definición de Temática
 - **E-Commerce de Juguetes Didácticos:** Se definió formalmente el enfoque del sitio web, orientado a la venta en línea de productos educativos y juegos didácticos.
@@ -49,4 +49,6 @@ Paleta de Colores e Identidad Visual
 - **Esquema de Colores:** Se definió una paleta basada en **degradados en tonalidades celestes y colores claros**, buscando transmitir una estética infantil, limpia, accesible y didáctica.
 - Todo esto como obejtivos para el Frontend (La imagen de Mockup es netamente referancial)
 
+---
 
+ Cambios — Semana 5
