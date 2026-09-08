@@ -27,11 +27,9 @@ Páginas 2 a 5
 
 ---
 
----
-
  Cambios — Semana 3
 
-- **En construcción:** En esta semana se estuvo trabajando en la reestructuración interna del proyecto, organización del código base y preparación de la arquitectura para el catálogo de productos.
+- **En construcción:** En esta semana se estuvo trabajando en la reestructuración interna del proyecto.
 
 ---
 
@@ -49,5 +47,6 @@ Mockup y Diseño UI/UX
 
 Paleta de Colores e Identidad Visual
 - **Esquema de Colores:** Se definió una paleta basada en **degradados en tonalidades celestes y colores claros**, buscando transmitir una estética infantil, limpia, accesible y didáctica.
+- Todo esto como obejtivos para el Frontend (La imagen de Mockup es netamente referancial)
 
 
