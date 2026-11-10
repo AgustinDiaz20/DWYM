@@ -95,9 +95,3 @@ evidencias/      RUN-01, RUN-02 … (resultados originales, incluidos fallos), C
 docs/            informes U1–U3, diagramas (Mermaid), ADR, trazabilidad
 ```
 
-## Origen y línea base
-
-Este proyecto es una **adaptación a la temática de juguetes** (Juguetería Ludiko) del proyecto conjunto «Chocolatería Chocomanía»
-desarrollado con Bruno Martínez (https://github.com/b9ruci/DWM). Se conservaron la arquitectura y las pruebas; se cambiaron el dominio
-(productos, categorías, textos, imágenes, paleta de colores), los datos de ejemplo y el mockup (`docs/diseno/mockup-jugueteria.jpg`, Semana 4).
-Su análisis está en `docs/unidad3-informe.md` (Etapa 1).
