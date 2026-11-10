@@ -84,7 +84,7 @@ Validación del Sistema
 
 ---
 
- Configuración y Despliegue 
+ Tutorial de Acceso y Ejecución 
 
 Requisitos del Sistema
 - **Node.js:** ≥ 22.13 (usa `node:sqlite`).
@@ -93,16 +93,45 @@ Requisitos del Sistema
 - *(Opcional)* **Docker + Docker Compose** para contenedores y separación de redes.
 
 Inicio Rápido (Modo Local)
-- Instalar dependencias: `cd backend && npm ci && cd ..`
-- Generar secretos iniciales: `node backend/scripts/init-secrets.js`
-- Arrancar el entorno: `node backend/scripts/start-local.js`
-- *Uso:* Abrir `http://localhost:8000`. Las credenciales base (admin, clienteA, clienteB) están en `.secrets/seed-accounts.json` (archivo generado localmente, no compartir).
-- Restablecer la base de datos (requiere sistema detenido): `node backend/scripts/reset-data.js`
+Para levantar el sitio y acceder a la página, ejecuta los siguientes comandos en tu terminal:
+
+1. **Instalar dependencias:**
+   ```bash
+   cd backend && npm ci && cd ..
+   ```
+
+2. **Generar los secretos iniciales:**
+   ```bash
+   node backend/scripts/init-secrets.js
+   ```
+
+3. **Arrancar el servidor:**
+   ```bash
+   node backend/scripts/start-local.js
+   ```
+
+4. **Acceder a la página:** 
+   - Abre tu navegador y dirígete a `http://localhost:8000`.
+   - **Para ingresar (Login):** Las cuentas ficticias disponibles (`admin`, `clienteA`, `clienteB`) tienen sus contraseñas generadas automáticamente en el archivo `.secrets/seed-accounts.json` (no compartas este archivo).
+
+5. **Restaurar la base de datos:** (Solo si necesitas reiniciar el estado, con el sistema detenido):
+   ```bash
+   node backend/scripts/reset-data.js
+   ```
 
 Alternativa con Docker Compose
-- Generar secretos: `node backend/scripts/init-secrets.js`
-- Levantar servicios: `docker compose up --build`
-- *Nota:* Esto publicará únicamente los puertos 8000, 8080 y 8090; dejando el resto en una red `internal`.
+Si prefieres usar contenedores:
+
+1. **Generar secretos:**
+   ```bash
+   node backend/scripts/init-secrets.js
+   ```
+
+2. **Levantar servicios:**
+   ```bash
+   docker compose up --build
+   ```
+*Nota:* Esto publicará únicamente los puertos 8000, 8080 y 8090; dejando el resto en una red interna y segura.
 
 ---
 
