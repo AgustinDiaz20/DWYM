@@ -1,0 +1,5 @@
+[
+  { "id": "ordenes", "nombre": "Órdenes especiales", "descripcion": "Armamos packs de juguetes a tu medida para cumpleaños, regalos y fechas especiales.", "cta": "/contacto.php?tipo=ORDEN_ESPECIAL" },
+  { "id": "colegios", "nombre": "Material para colegios y jardines", "descripcion": "Cotiza sets didácticos por volumen para salas de clases y jardines infantiles.", "cta": "/contacto.php" },
+  { "id": "despacho", "nombre": "Despacho a domicilio", "descripcion": "Entregamos en Santiago y hacemos seguimiento de tu pedido desde Mis pedidos.", "cta": "/pedidos.php" }
+]
