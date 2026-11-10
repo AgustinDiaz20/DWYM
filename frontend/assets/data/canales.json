@@ -1,0 +1,6 @@
+[
+  { "icono": "bi-envelope", "tipo": "Correo", "valor": "hola@ludiko.test" },
+  { "icono": "bi-telephone", "tipo": "Teléfono", "valor": "+56 2 2345 6789 (ficticio)" },
+  { "icono": "bi-geo-alt", "tipo": "Dirección", "valor": "Av. Juego 100, Santiago (ficticia)" },
+  { "icono": "bi-clock", "tipo": "Horario", "valor": "Lunes a viernes, 10:00 a 18:00" }
+]
