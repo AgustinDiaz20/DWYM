@@ -1,97 +1,114 @@
-# Juguetería Ludiko — aplicación integrada (Unidades 1, 2 y 3)
+<div align="center">
 
-Caso: tienda en línea de juguetes didácticos y lúdicos para niños (Juguetería Ludiko) (catálogo, carrito, pedidos, pagos, órdenes especiales y administración).
-Integrantes: Bruno Martínez (Sección 8481) y Agustín Díaz.
+# Juguetería Ludiko — Aplicación Integrada (Unidades 1, 2 y 3)
 
-El diseño parte del mockup hecho a mano: [`docs/diseno/mockup-jugueteria.jpg`](docs/diseno/mockup-jugueteria.jpg).
+**Creado por Agustín Díaz**
 
-| Unidad | Qué contiene | Documento |
-|---|---|---|
-| 1 — Front-end responsivo | Bootstrap (grid), box model, flexbox, DOM dinámico, estados de carga/vacío/error | [`docs/unidad1-frontend.md`](docs/unidad1-frontend.md) |
-| 2 — Backend seguro | API Gateway, Auth, gestor de secretos, GraphQL Gateway, inventory, orders, clients, payments | [`docs/unidad2-informe.md`](docs/unidad2-informe.md) |
-| 3 — Integración y validación | Protocolo, ejecuciones, evidencias, incidencias, indicadores y conclusiones | [`docs/unidad3-informe.md`](docs/unidad3-informe.md) |
+</div>
+*Proyecto de tienda en línea de juguetes didácticos y lúdicos para niños.*
 
-## Arquitectura (resumen)
+---
+ Cambios — Semana 2
 
-```
-Navegador ──► Frontend PHP :8000 (HTML/CSS/JS, sin secretos)
-   │
-   └──► API Gateway :8080  (único backend público: lista blanca de rutas, JWT RS256, revocación,
-          │                  límites de solicitudes, timeouts, CORS, X-Correlation-Id)
-          ├─► auth       (credenciales scrypt, sesiones, JWT)
-          ├─► inventory  (catálogo, stock, reservas)          ┐
-          ├─► orders     (pedidos y transiciones)            │ servicios privados: exigen
-          ├─► clients    (perfil cifrado, solicitudes)       │ identidad de servicio HMAC
-          ├─► payments   (pagos, webhooks firmados) ──► payment-sandbox :8090 (DOBLE DE PRUEBA)
-          └─► graphql    (agregación orders+inventory+payments+clients)
-   secrets (administrador de secretos con ACL por consumidor) ◄── todos los servicios al arrancar
-```
+Navbar
+- Se agregó la clase `fixed-top` para que el navbar cubra **todo el ancho superior** de la pantalla y permanezca visible al hacer scroll.
+- Se ajustó el `padding-top` del `body` a `76px` para compensar el navbar fijo y evitar que tape el contenido.
+- El botón **Login** se movió **dentro del navbar**, alineado al extremo derecho usando `ms-auto` de Bootstrap 5.
 
-## Requisitos
+Páginas 2 a 5
+- Se les dio la misma **estructura base** que la Página 1: fondo con degradado, navbar fijo con el menú y el botón de Login, y footer estilizado (`site-footer`).
+- Se marcó la clase `active` en el enlace correspondiente del navbar en cada página, para indicar en qué sección está el usuario.
+- Se corrigió un error de HTML mal formado en `Pagina2.php` (etiqueta `</html>` mal ubicada).
 
-- Node.js ≥ 22.13 (usa `node:sqlite`), PHP ≥ 8.1 (servidor embebido), npm.
-- Opcional: Docker + Docker Compose (`docker-compose.yml`, separación de redes).
-- Para las pruebas E2E: Playwright con Chromium (`npm i playwright && npx playwright install chromium` si no está instalado).
+Carousel en Página 4 
+- Se agregó un **carousel de Bootstrap** (`#demo`) con 3 imágenes, indicadores, flechas de navegación y autoplay.
+- Se agregó CSS personalizado para que combine con el resto del sitio: bordes redondeados, sombra, altura fija de `400px` y `object-fit: cover` para que las imágenes no se deformen.
 
-## Inicio rápido (modo local, verificado)
+---
 
-```bash
-cd backend && npm ci && cd ..
-```
+ Cambios — Semana 3
 
-```bash
-node backend/scripts/init-secrets.js
-```
+- **En construcción:** En esta semana se estuvo trabajando en la reestructuración interna del proyecto.
 
-```bash
-node backend/scripts/start-local.js
-```
+---
 
-Abrir http://localhost:8000. Las cuentas de prueba ficticias (admin, clienteA, clienteB) tienen contraseñas
-aleatorias generadas en `.secrets/seed-accounts.json` (no se versiona; no compartir).
+ Cambios — Semana 4 
 
-Restaurar los datos al estado inicial (con el sistema detenido):
+Definición de Temática
+- **E-Commerce de Juguetes Didácticos:** Se definió formalmente el enfoque del sitio web, orientado a la venta en línea de productos educativos y juegos didácticos (Juguetería Ludiko).
 
-```bash
-node backend/scripts/reset-data.js
-```
+Mockup y Diseño UI/UX
+- **Subida del Mockup inicial:** Se integró la propuesta gráfica e interfaz de usuario estructurada a mano (`docs/diseno/mockup-jugueteria.jpg`), definiendo la distribución principal de la tienda:
+  - **Header & Navegación:** Menú principal con categorías clave (*Inicio, Categorías, Edades, Novedades, Ofertas*), barra de búsqueda, acceso a perfil y carrito de compras.
+  - **Juguete Destacado:** Sección promocional diaria con precio, sistema de calificaciones por estrellas, control de cantidad y acceso rápido al carrito.
+  - **Packs Destacados:** Módulo interactivo con carrusel de imágenes para visualizar la variedad de productos incluidos en cada paquete.
+  - **Catálogo & Filtros:** Zona de filtrado y orden de búsqueda, junto con tarjetas de producto que incluyen previsualización dinámica al pasar el cursor.
 
-## Docker Compose (alternativa)
+Paleta de Colores e Identidad Visual
+- **Esquema de Colores:** Se definió una paleta basada en **degradados en tonalidades celestes y colores claros**, buscando transmitir una estética infantil, limpia, accesible y didáctica.
 
-```bash
-node backend/scripts/init-secrets.js
-```
+---
 
-```bash
-docker compose up --build
-```
+ Cambios — Semana 5 (Unidad 1: Front-end)
 
-Publica solo :8000, :8080 y :8090; los servicios privados y el gestor de secretos quedan en una red `internal`.
-**Limitación:** este archivo no pudo verificarse en el entorno donde se desarrolló (sin demonio Docker).
+Desarrollo Responsivo y UI
+- Integración de **Bootstrap (grid)**, box model y flexbox para garantizar una correcta adaptabilidad en distintos tamaños de pantalla.
+- Manipulación de **DOM dinámico** para mejorar la experiencia del usuario de forma fluida.
+- Manejo visual de los distintos momentos de interacción: **estados de carga, vacío y error**.
+- *Nota:* El detalle completo de esta implementación se encuentra en `docs/unidad1-frontend.md`.
 
-## Pruebas y evidencias
+---
 
-```bash
-node tests/runner.mjs --run RUN-03
-```
+ Cambios — Semana 6 (Unidad 2: Backend Seguro)
 
-Cada ejecución arranca el sistema con bases de datos nuevas, ejecuta P01–P29 (escritorio y móvil emulado) y guarda en
-`evidencias/RUN-03/` fichas, capturas, red con credenciales enmascaradas, trazas del backend por `X-Correlation-Id`
-y comprobaciones de persistencia. Las ejecuciones existentes no se sobrescriben.
+Arquitectura y Microservicios
+- **API Gateway (Puerto 8080):** Establecido como el único backend público. Incluye lista blanca de rutas, autenticación mediante JWT RS256, revocación, límites de solicitudes (rate limiting), timeouts, CORS y manejo de `X-Correlation-Id`.
+- **Servicios Privados:** Se construyeron módulos aislados que exigen identidad de servicio HMAC:
+  - `auth`: Credenciales scrypt, sesiones y JWT.
+  - `inventory`: Catálogo, control de stock y reservas.
+  - `orders`: Gestión de pedidos y transiciones.
+  - `clients`: Perfil cifrado y solicitudes.
+  - `payments`: Pagos y webhooks firmados, integrados con un sandbox (Puerto 8090).
+- **GraphQL Gateway:** Encargado de la agregación de los servicios (orders, inventory, payments y clients).
+- **Gestor de Secretos:** Servicio ejecutado al arranque que administra credenciales con ACL por consumidor.
+- *Nota:* Informe técnico disponible en `docs/unidad2-informe.md`.
 
-Prueba de carga (ADR-001):
+---
 
-```bash
-node tests/load/load-test.mjs
-```
+ Cambios — Semana 7 (Unidad 3: Integración y Validación)
 
-## Estructura
+Validación del Sistema
+- **Protocolo de Integración:** Verificación exhaustiva de la comunicación entre el API Gateway, los microservicios y el gestor de secretos.
+- **Monitoreo y Trazabilidad:** Uso de `X-Correlation-Id` para registrar y auditar las operaciones del backend.
+- *Nota:* Conclusiones e incidencias documentadas en `docs/unidad3-informe.md`.
 
-```
-frontend/        páginas PHP + assets (css, js/core, js/pages, img, vendor autoalojado)
-backend/         lib compartida, services/<servicio>, scripts (init-secrets, start-local, reset-data, rotate-secret)
-tests/           runner.mjs (arnés), suites/, lib/, load/
-evidencias/      RUN-01, RUN-02 … (resultados originales, incluidos fallos), CARGA-01
-docs/            informes U1–U3, diagramas (Mermaid), ADR, trazabilidad
-```
+---
 
+ Configuración y Despliegue 
+
+Requisitos del Sistema
+- **Node.js:** ≥ 22.13 (usa `node:sqlite`).
+- **PHP:** ≥ 8.1 (para el servidor frontend embebido).
+- **Dependencias:** `npm` instalado.
+- *(Opcional)* **Docker + Docker Compose** para contenedores y separación de redes.
+
+Inicio Rápido (Modo Local)
+- Instalar dependencias: `cd backend && npm ci && cd ..`
+- Generar secretos iniciales: `node backend/scripts/init-secrets.js`
+- Arrancar el entorno: `node backend/scripts/start-local.js`
+- *Uso:* Abrir `http://localhost:8000`. Las credenciales base (admin, clienteA, clienteB) están en `.secrets/seed-accounts.json` (archivo generado localmente, no compartir).
+- Restablecer la base de datos (requiere sistema detenido): `node backend/scripts/reset-data.js`
+
+Alternativa con Docker Compose
+- Generar secretos: `node backend/scripts/init-secrets.js`
+- Levantar servicios: `docker compose up --build`
+- *Nota:* Esto publicará únicamente los puertos 8000, 8080 y 8090; dejando el resto en una red `internal`.
+
+---
+
+ Estructura del Proyecto 
+
+Organización de Directorios
+- `frontend/` : Páginas PHP e interfaz gráfica (css, js, imágenes, librerías autoalojadas).
+- `backend/` : Lógica de servidor, `services/`, librería compartida y `scripts/` operativos (start, reset, init-secrets).
+- `docs/` : Documentación, diagramas arquitectónicos, ADRs y trazabilidad del proyecto.
